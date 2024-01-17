@@ -18,10 +18,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(HomeViewModel()).fetchMovies();
     return GetMaterialApp(
       initialBinding: Binding(),
       debugShowCheckedModeBanner: false,
-      home: SafeArea(
+      home:
+          HomePage(), /* SafeArea(
         child: FutureBuilder(
           future: Get.put(HomeViewModel()).fetchMovies(),
           builder: (context, snapshot) {
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
             }
           },
         ),
-      ),
+      ), */
     );
   }
 }
